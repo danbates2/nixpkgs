@@ -1,11 +1,11 @@
 { stdenv, requireFile, makeDesktopItem, libicns, imagemagick, jre, fetchzip }:
 
 let
-  version = "6.0.1";
+  version = "4.27.0";
   desktopItem = makeDesktopItem {
     name = "stm32CubeMX";
     exec = "stm32cubemx";
-    desktopName = "STM32CubeMX";
+    desktopName = "STM32CubeMX427";
     categories = "Development;";
     icon = "stm32cubemx";
   };
@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
 
   src = fetchzip {
     url = "https://sw-center.st.com/packs/resource/library/stm32cube_mx_v${builtins.replaceStrings ["."] [""] version}.zip";
-    sha256 = "15vxca1pgpgxgiz4wisrw0lylffdwnn4n46z9n0q37f8hmzlrk8f";
+    sha256 = "3c383ec23f07c2a5a6f0b0e40c853bae9e11475719598bff96fa5b74b410badc";
     stripRoot= false;
   };
 
